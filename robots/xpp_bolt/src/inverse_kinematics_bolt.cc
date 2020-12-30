@@ -47,8 +47,8 @@ InverseKinematicsBolt::GetAllJointAngles(const EndeffectorsPos& x_B) const
   auto x_biped_B = x_B.ToImpl();
   x_biped_B.resize(2, x_biped_B.front());
 
-  Eigen::Vector3d offset_base_to_hip_L(0.0,-0.0635, 0.04);
-  Eigen::Vector3d offset_base_to_hip_R(0.0, 0.0635, 0.04);
+  Eigen::Vector3d offset_base_to_hip_L(0.0,-0.04, 0.065);
+  Eigen::Vector3d offset_base_to_hip_R(0.0, 0.04, 0.065);
 
 
   q_vec.push_back(leg.GetJointAngles(x_biped_B.at(L) + offset_base_to_hip_L));
