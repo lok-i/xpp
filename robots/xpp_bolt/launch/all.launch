@@ -1,0 +1,7 @@
+<launch>
+  
+  <!--  Launches all visualizers that use HyQ legs  --> 
+  <include file="$(find xpp_bolt)/launch/bolt.launch"></include>
+
+  
+</launch>

@@ -1,0 +1,14 @@
+<launch>
+  
+  <!-- visualizes goal, opt. parameters and cartesian base state, endeffector positions and forces -->
+  <node name="rviz_marker_node" pkg="xpp_vis" type="rviz_marker_node" output="screen">
+  </node>
+  
+  <!-- Launch rviz with specific configuration -->
+  <node name="rviz_xpp" pkg="rviz" type="rviz"  args="-d $(find xpp_bolt)/rviz/xpp_bolt.rviz">
+  </node>
+  
+  <!--  Launches all visualizers Bolt  --> 
+  <include file="$(find xpp_bolt)/launch/all.launch"></include>
+  
+</launch>

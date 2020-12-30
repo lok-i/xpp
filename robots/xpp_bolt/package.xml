@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<package format="2">
+  <name>xpp_bolt</name>
+  <version>1.0.10</version>
+  <description>
+    Bolt specific functions for visualization in the  XPP Motion Framework.  
+    
+    Refer <a href="https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware/blob/master/mechanics/biped_6dof_v1/README.md#biped-robot-6dof-v1">MPI</a>.  
+  </description>
+  
+  <author>Lokesh Krishna</author>
+  <author email="lokesha1b2c3@gmail.com">Lokesh Krishna</author>
+
+  <maintainer email="lokesha1b2c3@gmail.com">Lokesh Krishna</maintainer>
+  <license>BSD</license>
+  
+  <url type="website">http://github.com/leggedrobotics/xpp</url>
+  <url type="bugtracker">http://github.com/leggedrobotics/xpp/issues</url>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>xacro</depend>
+  <depend>roscpp</depend>
+  <depend>xpp_vis</depend>
+</package>
