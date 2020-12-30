@@ -47,8 +47,12 @@ InverseKinematicsBolt::GetAllJointAngles(const EndeffectorsPos& x_B) const
   auto x_biped_B = x_B.ToImpl();
   x_biped_B.resize(2, x_biped_B.front());
 
-  q_vec.push_back(leg.GetJointAngles(x_biped_B.at(L) + Vector3d(0.0, -0.1, 0.15)));
-  q_vec.push_back(leg.GetJointAngles(x_biped_B.at(R) + Vector3d(0.0,  0.1, 0.15)));
+  Eigen::Vector3d offset_base_to_hip_L(0.0,-0.0635, 0.04);
+  Eigen::Vector3d offset_base_to_hip_R(0.0, 0.0635, 0.04);
+
+
+  q_vec.push_back(leg.GetJointAngles(x_biped_B.at(L) + offset_base_to_hip_L));
+  q_vec.push_back(leg.GetJointAngles(x_biped_B.at(R) + offset_base_to_hip_R));
 
 
   return Joints(q_vec);
@@ -57,3 +61,10 @@ InverseKinematicsBolt::GetAllJointAngles(const EndeffectorsPos& x_B) const
 } /* namespace xpp */
 
 
+/*
+    const double z_nominal_b = -0.31;
+    const double y_nominal_b =  0.1235;
+
+    nominal_stance_.at(L) << 0.0,  y_nominal_b, z_nominal_b;
+    nominal_stance_.at(R) << 0.0, -y_nominal_b, z_nominal_b;
+    */
